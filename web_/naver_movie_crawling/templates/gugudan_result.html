@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>홈 페이지</title>
+    <style>
+        ul{
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" bordercolor="blue">
+        <tr>
+            <td>
+                값1
+            </td>
+            <td>
+                <input type="text" name="value1" value="{{value1}}" placeholder="숫자 입력">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                결과
+            </td>
+            <td>
+                <ul>
+                    {% for in multiple_total %}
+                    <li>{{multiple_list}}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
