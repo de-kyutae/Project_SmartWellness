@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 화 투 </title>
+</head>
+<body>
+    <table border="1", bordercolor="white" bgcolor="#deb887">
+        <tr>
+            <td width="300px">
+                나의 점수는:
+            </td>
+            <td width="300px">
+                {{ my_remainder }}
+            </td>
+
+        </tr>
+        <tr>
+            <td width="300px">
+                {% if hwatoo != None %}
+                    <img src="static\image\{{ hwatoo_selection[0] }}.jpg" >
+                {% endif %}
+            </td>
+            <td width="300px">
+                {% if hwatoo != None %}
+                    <img src="static\image\{{ hwatoo_selection[1] }}.jpg" >
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                컴퓨터의 점수는:
+            </td>
+            <td width="300px">
+                {{ com_remainder }}
+            </td>
+
+        </tr>
+        <tr>
+            <td width="300px">
+                <img src="static\image\{{ hwatoo_selection[2] }}.jpg" >
+            </td>
+            <td width="300px">
+                <img src="static\image\{{ hwatoo_selection[3] }}.jpg" >
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#f0ffff">
+                {{ winner }}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

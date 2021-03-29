@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12간지</title>
+</head>
+<body>
+<form action="/" method="post">
+    출생연도 입력:
+    <input type="text" name="year">
+    <input type="submit" value = "간지 표시">
+
+    {% if jiji != None %}
+        <img src="static\image\{{myjiji}}.png">
+    {% enfif %}
+</form>
+
+</body>
+</html>

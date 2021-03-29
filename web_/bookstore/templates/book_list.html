@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>서적 목록</title>
+</head>
+<body>
+    <h3 align="center">서적 목록</h3>
+    <div>
+        <div style="text-align: right">
+            {{ total_count }} 건 검색됨
+        </div>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <td align="center">_id</td>
+                <td align="center">제목</td>
+                <td align="center">표지</td>
+                <td align="center">저자</td>
+                <td align="center">가격</td>
+                <td align="center">ISBN</td>
+                <td align="center">등록일자</td>
+                <td align ="center">
+                    수정/삭제
+{#                    <input type="button" value="수정">#}
+{#                    <input type="button" value="삭제">#}
+                </td>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td align="center">{{ book._id }}</td>
+                <td align="center">
+                    <a href="/book_details/{{ book._id }}">
+                        {{ book.title }}
+                    </a>
+                </td>
+                {%  if book.encoded_data != None %}
+                    <td align="center">
+                        <a href="/book_details/{{ book._id }}">
+                        <img width="50px" src ="data:image/jpg;base64, {{ book.encoded_data.decode('utf-8') }}">
+                        </a>
+                    </td>
+                {% else %}
+                    <td></td>
+                {% endif %}
+                <td align="center">{{ book.author }}</td>
+                <td align="center">{{ book.price }}</td>
+                <td align="center">{{ book.isbn }}</td>
+                <td align="center">{{ book.created_date }}</td>
+                <td align="center">
+                    <a href ="/book_details.html/{{ book.id }}">
+                    <input type="button" value="수정" class="btn btn-outline-secondary">
+                    </a>
+                    <input type="button" value="삭제" class="btn btn-outline-secondary">
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{%  endblock %}

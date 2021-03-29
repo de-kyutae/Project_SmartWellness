@@ -1,0 +1,1 @@
+mongodb+srv://kyutae:3636@cluster0.a79ct.mongodb.net/kim_db?retryWrites=true&w=majority

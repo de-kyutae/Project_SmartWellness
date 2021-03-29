@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <form action="/atlas_connect_info_update" method="post">
+        <div class="form-group">
+            <label for="isbn">atlas connect info</label>
+            <input type ="text" name = "atlas_connection_info" value = {{ atlas_connection_info }}>
+        </div>
+        <button type="button" class="btn btn-light">등 록</button>
+    </form>
+{% endblock %}
